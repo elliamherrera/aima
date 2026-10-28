@@ -1,0 +1,9 @@
+body{margin:0;background:#0A0A0A;color:#fff;font:16px Inter,sans-serif}
+.risk{background:#FFE600;color:#0A0A0A;padding:10px 16px;font-weight:900;text-align:center}
+main{max-width:960px;margin:auto;padding:24px}
+h1{font-family:Anton;font-weight:400;color:#FFE600;font-size:clamp(48px,12vw,120px);margin:20px 0 0}
+h2{font-weight:900}
+a.btn{display:inline-block;background:#FFE600;color:#0A0A0A;padding:12px 24px;font-weight:900;text-decoration:none}
+footer{border-top:1px solid #333;padding:20px;text-align:center;font-size:14px}
+footer a{color:#4A80BF}
+input{display:block;width:100%;max-width:400px;padding:10px;margin:8px 0}
