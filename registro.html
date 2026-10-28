@@ -1,17 +1,93 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Registro · AIMA</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
-<div class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</div>
-<main><h1>Registro</h1>
-<form id="f"><label>Nombre<input id="n" required></label><label>Correo<input id="e" type="email" required></label>
-<label><input type="checkbox" required style="display:inline;width:auto"> Leí y acepto el <a href="aviso-de-riesgo.html" style="color:#4A80BF">aviso de riesgo</a>.</label><br>
-<button class="btn" style="border:0;cursor:pointer;background:#FFE600;padding:12px 24px;font-weight:900">Crear mi ID</button></form>
-<h2 id="r"></h2></main>
-<footer><a href="index.html">Inicio</a> · <a href="aviso-de-riesgo.html">Aviso de riesgo</a></footer>
-<script>
-document.getElementById('f').onsubmit=function(ev){ev.preventDefault();
-var id='AIMA-'+crypto.randomUUID().replace(/-/g,'').slice(0,8).toUpperCase();
-var u=JSON.parse(localStorage.getItem('aima_users')||'[]');
-u.push({id:id,nombre:n.value,correo:e.value,fecha:new Date().toISOString()});
-localStorage.setItem('aima_users',JSON.stringify(u));
-document.getElementById('r').textContent='¡Listo, '+n.value+'! Tu ID es '+id;this.reset();};
-</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Registro · AIMA</title>
+<meta name="description" content="Crea tu cuenta AIMA con correo y contraseña. Debes aceptar los términos. Los depósitos no están habilitados.">
+<link rel="canonical" href="https://elliamherrera.github.io/aima/registro.html">
+<meta property="og:title" content="Registro · AIMA">
+<meta property="og:description" content="Crea tu cuenta AIMA con correo y contraseña. Debes aceptar los términos. Los depósitos no están habilitados.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elliamherrera.github.io/aima/registro.html">
+<meta property="og:locale" content="es_DO">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="registro">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="bg" aria-hidden="true"><div class="aurora"></div><div class="gridlines"></div><div class="particles"></div></div>
+<div class="sticky-stack">
+<p class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</p>
+
+</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="logo" href="index.html">AIMA</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"></span><span class="visually-hidden">Menú</span></button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="login.html" data-guest>Iniciar sesión</a>
+      <a href="panel.html">Panel</a>
+      <a href="depositos.html" data-user hidden>Depósitos</a>
+      <a href="historial.html" data-user hidden>Historial</a>
+      <a href="avisos.html" data-user hidden>Avisos</a>
+      <a href="ajustes.html" data-user hidden>Ajustes</a>
+      <a href="admin.html" data-admin hidden>Admin</a>
+      <button type="button" class="linkish" data-logout data-user hidden>Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<noscript><p class="halt">Activa JavaScript para usar las cuentas. El aviso de riesgo y los textos se pueden leer igual.</p></noscript>
+<p id="system-msg" class="system-msg" role="status"></p>
+
+<div class="card narrow">
+  <p class="eyebrow">Cuenta</p>
+  <h1 class="h1-long">Registro</h1>
+  <p>Tu ID tendrá la forma AIMA-XXXXXXXX. Crear la cuenta no autoriza un cobro.</p>
+  <p id="form-msg" class="form-msg" role="status"></p>
+  <form id="form-registro" aria-describedby="form-msg">
+    <label>Nombre
+      <input id="nombre" name="nombre" required maxlength="120" autocomplete="name">
+    </label>
+    <label>Correo
+      <input id="email" name="email" type="email" required maxlength="160" autocomplete="email" spellcheck="false">
+    </label>
+    <label>Contraseña
+      <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
+    </label>
+    <label>Repite la contraseña
+      <input id="password2" name="password2" type="password" required minlength="8" autocomplete="new-password">
+    </label>
+    <label class="check"><input id="mayor" type="checkbox" required> Confirmo que tengo 18 años o más.</label>
+    <label class="check"><input id="riesgo" type="checkbox" required> Leí y acepto el <a href="aviso-de-riesgo.html">aviso de riesgo</a>.</label>
+    <label class="check"><input id="terms" type="checkbox" required> He leído y acepto los <a href="terminos.html" target="_blank" rel="noopener">Términos y Condiciones<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>.</label>
+    <p class="hint">Versión 2026-10-28-borrador. Sin esta casilla no se crea la cuenta. La aceptación queda guardada en tu perfil.</p>
+    <button class="btn" type="submit">Crear mi ID</button>
+  </form>
+  <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+</div>
+
+</main>
+<footer class="site-footer">
+  <nav aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="aviso-de-riesgo.html">Aviso de riesgo</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="bitacora-cardiaco.html">Bitácora experimental (independiente de AIMA)</a>
+  </nav>
+  <p>AIMA está en construcción. No recibe dinero. No promete rendimientos.</p>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

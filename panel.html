@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Panel · AIMA</title>
+<meta name="description" content="Panel de tu cuenta AIMA: nombre, correo, ID y registro de interés de depósito. Los depósitos no están habilitados.">
+<link rel="canonical" href="https://elliamherrera.github.io/aima/panel.html">
+<meta property="og:title" content="Panel · AIMA">
+<meta property="og:description" content="Panel de tu cuenta AIMA: nombre, correo, ID y registro de interés de depósito. Los depósitos no están habilitados.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elliamherrera.github.io/aima/panel.html">
+<meta property="og:locale" content="es_DO">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="panel">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="bg" aria-hidden="true"><div class="aurora"></div><div class="gridlines"></div><div class="particles"></div></div>
+<div class="sticky-stack">
+<p class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</p>
+
+</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="logo" href="index.html">AIMA</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"></span><span class="visually-hidden">Menú</span></button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="login.html" data-guest>Iniciar sesión</a>
+      <a href="panel.html">Panel</a>
+      <a href="depositos.html" data-user hidden>Depósitos</a>
+      <a href="historial.html" data-user hidden>Historial</a>
+      <a href="avisos.html" data-user hidden>Avisos</a>
+      <a href="ajustes.html" data-user hidden>Ajustes</a>
+      <a href="admin.html" data-admin hidden>Admin</a>
+      <button type="button" class="linkish" data-logout data-user hidden>Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<noscript><p class="halt">Activa JavaScript para usar las cuentas. El aviso de riesgo y los textos se pueden leer igual.</p></noscript>
+<p id="system-msg" class="system-msg" role="status"></p>
+
+<p id="loading" role="status">Cargando tu panel…</p>
+<div id="app-ready" hidden>
+  <p class="eyebrow">Panel</p>
+  <h1 class="h1-long">Tu cuenta</h1>
+  <dl class="stats">
+    <div><dt>Nombre</dt><dd id="p-nombre">—</dd></div>
+    <div><dt>Correo</dt><dd id="p-email">—</dd></div>
+    <div><dt>ID AIMA</dt><dd id="p-id" class="mono">—</dd></div>
+  </dl>
+  <div class="btn-row">
+    <button type="button" class="btn btn-ghost" id="copy-id">Copiar ID</button>
+    <button type="button" class="btn btn-ghost" data-logout>Cerrar sesión</button>
+  </div>
+  <nav class="quick" aria-label="Secciones de la cuenta">
+    <a href="depositos.html">Depósitos</a>
+    <a href="historial.html">Historial</a>
+    <a href="avisos.html">Avisos</a>
+    <a href="ajustes.html">Ajustes</a>
+  </nav>
+  <section class="stack" aria-labelledby="dep-title">
+    <h2 id="dep-title">Depósitos</h2>
+    <p class="halt">Los depósitos aún no están habilitados. AIMA no recibe dinero por ahora; esto es solo un registro de interés.</p>
+    <div class="card">
+      <form id="deposit-form" aria-describedby="deposit-msg">
+  <label>Monto de interés (solo registro, sin cargo)
+    <input id="amount" name="amount" type="number" inputmode="decimal" min="0.01" max="1000000" step="0.01" required>
+  </label>
+  <label>Medio de interés
+    <select id="method" name="method" required>
+      <option value="">Elige un medio</option>
+      <option>Transferencia, cuando exista</option>
+      <option>Tarjeta, cuando exista</option>
+      <option>Otro medio futuro</option>
+    </select>
+  </label>
+  <p class="hint">Elegir un medio no abre un pago ni muestra una cuenta destino. No pedimos números de tarjeta, cuentas bancarias ni direcciones de monedero.</p>
+  <button class="btn" type="submit">Registrar intención</button>
+</form>
+<p id="deposit-msg" class="form-msg" role="status"></p>
+    </div>
+    <h3>Últimas intenciones</h3>
+    <ul>
+  <li><strong>Pendiente:</strong> solo quedó anotado.</li>
+  <li><strong>En revisión:</strong> una persona administradora lo miró. Sigue sin ser un pago.</li>
+  <li><strong>Archivada:</strong> se cerró el registro de interés. No entró dinero.</li>
+</ul>
+    <div class="table-wrap">
+      <table>
+        <caption class="visually-hidden">Últimas intenciones de depósito</caption>
+        <thead><tr><th>Fecha</th><th>Monto de interés</th><th>Medio</th><th>Estado</th></tr></thead>
+        <tbody id="deposit-list"></tbody>
+      </table>
+    </div>
+    <p id="deposit-empty" hidden>Todavía no registras ninguna intención de depósito.</p>
+  </section>
+</div>
+
+</main>
+<footer class="site-footer">
+  <nav aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="aviso-de-riesgo.html">Aviso de riesgo</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="bitacora-cardiaco.html">Bitácora experimental (independiente de AIMA)</a>
+  </nav>
+  <p>AIMA está en construcción. No recibe dinero. No promete rendimientos.</p>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

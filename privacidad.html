@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Privacidad · AIMA</title>
+<meta name="description" content="Borrador de privacidad de AIMA según la Ley 172-13 de la República Dominicana. No se guardan documentos de identidad ni pagos.">
+<link rel="canonical" href="https://elliamherrera.github.io/aima/privacidad.html">
+<meta property="og:title" content="Privacidad · AIMA">
+<meta property="og:description" content="Borrador de privacidad de AIMA según la Ley 172-13 de la República Dominicana. No se guardan documentos de identidad ni pagos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elliamherrera.github.io/aima/privacidad.html">
+<meta property="og:locale" content="es_DO">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="bg" aria-hidden="true"><div class="aurora"></div><div class="gridlines"></div><div class="particles"></div></div>
+<div class="sticky-stack">
+<p class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</p>
+<p class="draft">Borrador pendiente de revisión legal</p>
+</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="logo" href="index.html">AIMA</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"></span><span class="visually-hidden">Menú</span></button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="login.html" data-guest>Iniciar sesión</a>
+      <a href="panel.html">Panel</a>
+      <a href="depositos.html" data-user hidden>Depósitos</a>
+      <a href="historial.html" data-user hidden>Historial</a>
+      <a href="avisos.html" data-user hidden>Avisos</a>
+      <a href="ajustes.html" data-user hidden>Ajustes</a>
+      <a href="admin.html" data-admin hidden>Admin</a>
+      <button type="button" class="linkish" data-logout data-user hidden>Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<noscript><p class="halt">Activa JavaScript para usar las cuentas. El aviso de riesgo y los textos se pueden leer igual.</p></noscript>
+<p id="system-msg" class="system-msg" role="status"></p>
+
+<p class="eyebrow">Ley núm. 172-13 · borrador</p>
+<h1 class="h1-long">Privacidad</h1>
+<div class="card prose">
+  <p>Este aviso describe qué datos trata el sitio de AIMA. Es un borrador pendiente de revisión legal. No sustituye una política cerrada por un abogado.</p>
+
+  <h2>Responsable</h2>
+  <p>La persona titular del proyecto AIMA, identificada en el repositorio público github.com/elliamherrera/aima. El correo de contacto está pendiente de publicación: será el mismo que figure en los términos cuando se sustituya ese párrafo.</p>
+
+  <h2>Datos que tratamos</h2>
+  <ul>
+    <li>Cuenta: nombre, correo e identificador AIMA-XXXXXXXX.</li>
+    <li>Contraseña: la gestiona Supabase Auth. Este sitio no la muestra ni la guarda en texto plano.</li>
+    <li>Aceptación: fecha y versión de los términos.</li>
+    <li>Perfil opcional, si lo escribes: teléfono, fecha de nacimiento, país, ciudad, tipo y número de documento.</li>
+    <li>Interés de depósito: monto, medio elegido y estado del registro.</li>
+    <li>Datos técnicos que el navegador envía a los proveedores que entregan el sitio y la base (por ejemplo dirección IP en registros de seguridad).</li>
+  </ul>
+
+  <h2>Datos que no pedimos</h2>
+  <p>No pedimos ni guardamos imágenes ni copias de documentos de identidad. No pedimos números de tarjeta, cuentas bancarias ni direcciones de monedero. No procesamos pagos.</p>
+
+  <h2>Para qué</h2>
+  <ul>
+    <li>Crear la cuenta y mostrar el panel.</li>
+    <li>Mantener el identificador único.</li>
+    <li>Guardar la aceptación de los términos.</li>
+    <li>Anotar intenciones de depósito y su estado.</li>
+    <li>Mostrar avisos.</li>
+    <li>Permitir que una cuenta administradora revise esas intenciones.</li>
+    <li>Proteger el acceso.</li>
+  </ul>
+  <p>No usamos estos datos para venderlos ni para calcular un rendimiento prometido. No hay un rendimiento prometido.</p>
+
+  <h2>Base</h2>
+  <p>El consentimiento que das al registrarte y al enviar cada formulario. Puedes dejar de usar el sitio y pedir la eliminación de la cuenta.</p>
+
+  <h2>Encargados</h2>
+  <ul>
+    <li>Supabase aloja la autenticación y la base. La región la elige el titular al crear el proyecto y puede estar fuera de la República Dominicana.</li>
+    <li>GitHub Pages entrega los archivos del sitio.</li>
+    <li>Google Fonts puede recibir tu dirección IP al descargar las tipografías.</li>
+  </ul>
+
+  <h2>Derechos bajo la Ley 172-13</h2>
+  <p>Puedes pedir acceso, rectificación, cancelación y oposición respecto de tus datos personales. El nombre y los datos opcionales del perfil se corrigen en Ajustes. La contraseña se cambia en Ajustes. El ID AIMA no se edita porque identifica la cuenta. Para el resto, escribe al contacto cuando esté publicado, o a la persona titular del repositorio mientras tanto.</p>
+  <p>También puedes acudir a la vía que la Ley núm. 172-13 reconozca ante la autoridad competente.</p>
+
+  <h2>Conservación</h2>
+  <p>Los datos duran mientras exista la cuenta. Las intenciones de depósito se conservan como historial tuyo y para la revisión interna. Si pides la cancelación, se eliminarán o se anonimizarán, salvo que una norma obligue a guardarlos.</p>
+
+  <h2>Seguridad</h2>
+  <p>Las tablas usan reglas para que cada sesión lea y edite solo sus filas, salvo la cuenta marcada como administradora, que ve las intenciones y los avisos. La clave anon del archivo config.js es pública a propósito y no es la clave de servicio. Esa clave de servicio no debe ponerse en el sitio.</p>
+
+  <h2>Menores</h2>
+  <p>AIMA no está dirigida a menores de 18 años. No registres a un menor.</p>
+
+  <h2>Cambios</h2>
+  <p>Si este aviso cambia de fondo, se publicará la nueva versión en esta página y, cuando corresponda, un aviso dentro de la cuenta.</p>
+</div>
+
+</main>
+<footer class="site-footer">
+  <nav aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="aviso-de-riesgo.html">Aviso de riesgo</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="bitacora-cardiaco.html">Bitácora experimental (independiente de AIMA)</a>
+  </nav>
+  <p>AIMA está en construcción. No recibe dinero. No promete rendimientos.</p>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

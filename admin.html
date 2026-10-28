@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Admin · AIMA</title>
+<meta name="description" content="Vista de administración de AIMA para revisar intenciones de depósito y publicar avisos.">
+<link rel="canonical" href="https://elliamherrera.github.io/aima/admin.html">
+<meta property="og:title" content="Admin · AIMA">
+<meta property="og:description" content="Vista de administración de AIMA para revisar intenciones de depósito y publicar avisos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elliamherrera.github.io/aima/admin.html">
+<meta property="og:locale" content="es_DO">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="bg" aria-hidden="true"><div class="aurora"></div><div class="gridlines"></div><div class="particles"></div></div>
+<div class="sticky-stack">
+<p class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</p>
+
+</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="logo" href="index.html">AIMA</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"></span><span class="visually-hidden">Menú</span></button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="login.html" data-guest>Iniciar sesión</a>
+      <a href="panel.html">Panel</a>
+      <a href="depositos.html" data-user hidden>Depósitos</a>
+      <a href="historial.html" data-user hidden>Historial</a>
+      <a href="avisos.html" data-user hidden>Avisos</a>
+      <a href="ajustes.html" data-user hidden>Ajustes</a>
+      <a href="admin.html" data-admin hidden>Admin</a>
+      <button type="button" class="linkish" data-logout data-user hidden>Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<noscript><p class="halt">Activa JavaScript para usar las cuentas. El aviso de riesgo y los textos se pueden leer igual.</p></noscript>
+<p id="system-msg" class="system-msg" role="status"></p>
+
+<p id="loading" role="status">Cargando…</p>
+<div id="app-ready" hidden class="stack">
+  <p class="eyebrow">Administración</p>
+  <h1 class="h1-long">Admin</h1>
+  <p id="admin-denied" class="card" hidden>Esta vista es solo para cuentas con is_admin. Si eres la persona titular, actívalo en el SQL Editor como explica SETUP.md.</p>
+  <div id="admin-tools" hidden class="stack">
+    <p class="halt">Los depósitos aún no están habilitados. AIMA no recibe dinero por ahora; esto es solo un registro de interés.</p>
+    <p>Cambiar un estado no mueve dinero, no habilita depósitos y no promete una ganancia.</p>
+    <ul>
+  <li><strong>Pendiente:</strong> solo quedó anotado.</li>
+  <li><strong>En revisión:</strong> una persona administradora lo miró. Sigue sin ser un pago.</li>
+  <li><strong>Archivada:</strong> se cerró el registro de interés. No entró dinero.</li>
+</ul>
+    <p id="admin-msg" class="form-msg" role="status"></p>
+    <div class="table-wrap card">
+      <table>
+        <caption>Intenciones de todas las cuentas</caption>
+        <thead><tr><th>Nombre</th><th>ID</th><th>Correo</th><th>Fecha</th><th>Monto</th><th>Medio</th><th>Estado</th></tr></thead>
+        <tbody id="admin-list"></tbody>
+      </table>
+      <p id="admin-empty" hidden>No hay intenciones registradas.</p>
+    </div>
+    <section class="card narrow" aria-labelledby="pub-title">
+      <h2 id="pub-title">Publicar aviso</h2>
+      <p class="hint">El texto se muestra tal cual a las cuentas que entren a Avisos. No escribas proyecciones ni garantías de rendimiento.</p>
+      <p id="news-msg" class="form-msg" role="status"></p>
+      <form id="news-form">
+        <label>Título
+          <input id="news-title" name="title" required minlength="3" maxlength="120">
+        </label>
+        <label>Texto
+          <textarea id="news-body" name="body" required minlength="3" maxlength="4000"></textarea>
+        </label>
+        <button class="btn" type="submit">Publicar aviso</button>
+      </form>
+      <h3>Avisos existentes</h3>
+      <ul id="admin-news"></ul>
+    </section>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <nav aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="aviso-de-riesgo.html">Aviso de riesgo</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="bitacora-cardiaco.html">Bitácora experimental (independiente de AIMA)</a>
+  </nav>
+  <p>AIMA está en construcción. No recibe dinero. No promete rendimientos.</p>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

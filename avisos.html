@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Avisos · AIMA</title>
+<meta name="description" content="Avisos de tu cuenta AIMA. No incluyen promesas de rendimiento.">
+<link rel="canonical" href="https://elliamherrera.github.io/aima/avisos.html">
+<meta property="og:title" content="Avisos · AIMA">
+<meta property="og:description" content="Avisos de tu cuenta AIMA. No incluyen promesas de rendimiento.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elliamherrera.github.io/aima/avisos.html">
+<meta property="og:locale" content="es_DO">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="avisos">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="bg" aria-hidden="true"><div class="aurora"></div><div class="gridlines"></div><div class="particles"></div></div>
+<div class="sticky-stack">
+<p class="risk">Contenido educativo, no es asesoría financiera. Invertir en criptomonedas tiene alto riesgo de pérdida. Rendimientos pasados no garantizan resultados futuros.</p>
+
+</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="logo" href="index.html">AIMA</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"></span><span class="visually-hidden">Menú</span></button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="login.html" data-guest>Iniciar sesión</a>
+      <a href="panel.html">Panel</a>
+      <a href="depositos.html" data-user hidden>Depósitos</a>
+      <a href="historial.html" data-user hidden>Historial</a>
+      <a href="avisos.html" data-user hidden>Avisos</a>
+      <a href="ajustes.html" data-user hidden>Ajustes</a>
+      <a href="admin.html" data-admin hidden>Admin</a>
+      <button type="button" class="linkish" data-logout data-user hidden>Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<noscript><p class="halt">Activa JavaScript para usar las cuentas. El aviso de riesgo y los textos se pueden leer igual.</p></noscript>
+<p id="system-msg" class="system-msg" role="status"></p>
+
+<p id="loading" role="status">Cargando…</p>
+<div id="app-ready" hidden>
+  <p class="eyebrow">Cuenta</p>
+  <h1 class="h1-long">Avisos</h1>
+  <p>Aquí aparecen los anuncios que publique la administración. Ninguno es una oferta de inversión ni una proyección de ganancia.</p>
+  <div id="news-list" class="news"></div>
+  <p id="news-empty" hidden>No hay avisos publicados.</p>
+</div>
+
+</main>
+<footer class="site-footer">
+  <nav aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="aviso-de-riesgo.html">Aviso de riesgo</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="bitacora-cardiaco.html">Bitácora experimental (independiente de AIMA)</a>
+  </nav>
+  <p>AIMA está en construcción. No recibe dinero. No promete rendimientos.</p>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

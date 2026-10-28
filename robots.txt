@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elliamherrera.github.io/aima/sitemap.xml
